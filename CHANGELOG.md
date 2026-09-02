@@ -4,6 +4,11 @@ All notable changes to this project will be documented here.
 
 ## [Unreleased]
 
+- Added feature-request and issue-routing templates for public contributors.
+- Added support and release-process documentation for the source-available edition.
+- Added weekly Dependabot checks for Python dependencies and GitHub Actions.
+- Added README links for the validation gate and current Public Preview release.
+
 ## [0.1.0] - 2026-09-02
 
 ### Added
