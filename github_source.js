@@ -7,15 +7,15 @@ const GITHUB_MARK_URL = 'https://github.githubassets.com/images/modules/logos_pa
 const COPY = {
   'zh-TW': {
     label: '專案來源',
-    hint: 'GitHub 開源專案'
+    hint: 'GitHub source-available 專案'
   },
   en: {
     label: 'Project source',
-    hint: 'Open-source on GitHub'
+    hint: 'Source-available on GitHub'
   },
   'vi-VN': {
     label: 'Nguồn dự án',
-    hint: 'Mã nguồn mở trên GitHub'
+    hint: 'Dự án source-available trên GitHub'
   }
 };
 
