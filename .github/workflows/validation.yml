@@ -2,7 +2,6 @@ name: SharBo Globo Public Validation Gate
 
 on:
   push:
-    branches: [main]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -36,11 +35,13 @@ jobs:
           node --check exploration.js
           node --check insight_widgets.js
           node --check github_source.js
+          node --check render_security.js
       - name: Run JavaScript regressions
         run: |
           node tests/test_personalization.mjs
           node tests/test_quick_filters.mjs
           node tests/test_topics.mjs
+          node tests/test_render_security.mjs
       - name: Run Python regressions
         run: python -m unittest discover -s tests -v
       - name: Run package tests

@@ -3,6 +3,7 @@ import {
   getLocale,
   loadLocalizedOverlay
 } from './i18n.js';
+import { esc, safeIcon } from './render_security.js';
 
 const COPY = {
   'zh-TW': {
@@ -35,10 +36,6 @@ const COPY = {
 };
 
 let scheduled = false;
-
-function esc(value = '') {
-  return String(value).replace(/[&<>\"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[ch]));
-}
 
 function fmt(template, values) {
   return template.replace(/\{(\w+)\}/g, (_, key) => values[key] ?? '');
@@ -130,7 +127,7 @@ function enhanceImpact(report) {
   if (container.dataset.insightSignature === signature) return;
   container.dataset.insightSignature = signature;
 
-  container.innerHTML = nodes.map((node,index) => `${index ? '<span class="arrow">→</span>' : ''}<div class="impact-node"><div class="bubble">${esc(node.icon || '•')}</div>${esc(localizedLabel(node))}</div>`).join('');
+  container.innerHTML = nodes.map((node,index) => `${index ? '<span class="arrow">→</span>' : ''}<div class="impact-node"><div class="bubble">${safeIcon(node.icon)}</div>${esc(localizedLabel(node))}</div>`).join('');
 
   const parent = container.parentElement;
   if (!parent) return;
