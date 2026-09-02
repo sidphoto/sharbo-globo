@@ -14,4 +14,6 @@ All notable changes to this project will be documented here.
 - Fail-closed multilingual bundle validator.
 - Fully synthetic `zh-TW`, `en`, and `vi-VN` fixture.
 - Tests for locale completeness, required fields, canonical ordering, and READY state.
-- CI checks for validation, tests, and prohibited tracked paths.
+- Unified CI validation on every branch push and pull request, including the public leak gate.
+- Shared HTML escaping and icon allowlisting for JSON-driven rendering.
+- Static CSP metadata and least-privilege Pages deployment permissions.
