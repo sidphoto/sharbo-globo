@@ -1,6 +1,6 @@
 # Demo and production separation
 
-The GitHub Pages site built from this repository is a synthetic demonstration. It is intentionally independent from the production data plane.
+The optional GitHub Pages site built from this repository is a synthetic demonstration. The Pages workflow is manual-only and intentionally independent from the production data plane; the public repository does not automatically publish a site on every commit.
 
 ```text
 Public demo repository
