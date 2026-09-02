@@ -2,6 +2,9 @@
 
 > Verified signals from global noise.
 
+[![Public Validation Gate](https://github.com/sidphoto/sharbo-globo/actions/workflows/validation.yml/badge.svg)](https://github.com/sidphoto/sharbo-globo/actions/workflows/validation.yml)  
+[Current release: v0.1.0 Public Preview](https://github.com/sidphoto/sharbo-globo/releases/tag/v0.1.0)
+
 SharBo Globo is a source-available, multilingual intelligence pipeline that turns global information noise into verified, ranked, and connected signals.
 
 It is designed around deterministic time windows, explicit evidence, fail-closed validation, and atomic multilingual publishing. It is not a generic AI news summarizer and it does not require an LLM to decide whether incomplete data may reach production.

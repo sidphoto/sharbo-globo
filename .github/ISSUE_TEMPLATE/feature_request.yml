@@ -1,0 +1,32 @@
+name: Feature request
+description: Propose a public contract, validator, demo, or documentation improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: Explain the user or maintainer problem this would solve.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the smallest useful public-edition change.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Public boundary check
+      description: Explain why the proposal does not require production sources, private data, or credentials.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+    validations:
+      required: false

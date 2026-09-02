@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/sidphoto/sharbo-globo/security/policy
+    about: Do not report vulnerabilities or sensitive-data exposure in a public issue.
+  - name: Documentation
+    url: https://github.com/sidphoto/sharbo-globo#documentation
+    about: Check the public contracts and contributor documentation first.
