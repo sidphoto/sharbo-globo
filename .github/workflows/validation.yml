@@ -58,3 +58,11 @@ jobs:
               json.loads(path.read_text(encoding='utf-8'))
               print(f'OK JSON: {path}')
           PY
+
+      - name: Reject private production paths
+        run: |
+          forbidden='^(deploy/|ops/|config/source_registry\.json$)'
+          if git ls-files | grep -E "$forbidden"; then
+            echo "A private production path is tracked."
+            exit 1
+          fi
