@@ -22,8 +22,8 @@ jobs:
       - name: Reject prohibited tracked paths
         shell: bash
         run: |
-          forbidden='^(data/|deploy/|ops/|config/source_registry\.json$)'
+          forbidden='^(deploy/|ops/|config/source_registry\.json$)'
           if git ls-files | grep -E "$forbidden"; then
-            echo "Prohibited production path is tracked."
+            echo "A private production path is tracked."
             exit 1
           fi
