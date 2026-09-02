@@ -1,0 +1,64 @@
+{
+  "canonical": {
+    "signal_ids": ["sig-example-001"],
+    "emerging_signal_ids": ["sig-example-001"],
+    "impact_chain_ids": ["chain-example-001"]
+  },
+  "localizations": {
+    "zh-TW": {
+      "world_summary": "這是一份完全合成的示範情報摘要。",
+      "signals": [{
+        "id": "sig-example-001",
+        "title": "合成訊號範例",
+        "what_happened": "一個虛構系統完成公開測試。",
+        "why_now": "公開契約已準備完成。",
+        "why_important": "可展示完整驗證流程。",
+        "winners_losers": "維護者與測試者獲得可重現範例。",
+        "taiwan_impact": "展示繁體中文在地化契約。",
+        "what_next": "執行測試並檢查驗證結果。"
+      }],
+      "taiwan_radar": [{"signal_id": "sig-example-001", "text": "合成的台灣影響說明。"}]
+    },
+    "en": {
+      "world_summary": "This is a fully synthetic intelligence summary.",
+      "signals": [{
+        "id": "sig-example-001",
+        "title": "Synthetic signal example",
+        "what_happened": "A fictional system completed a public test.",
+        "why_now": "The public contracts are ready.",
+        "why_important": "It demonstrates the complete validation path.",
+        "winners_losers": "Maintainers and testers gain a reproducible example.",
+        "taiwan_impact": "It demonstrates the Taiwan impact contract.",
+        "what_next": "Run the tests and inspect the validation result."
+      }],
+      "taiwan_radar": [{"signal_id": "sig-example-001", "text": "Synthetic Taiwan impact text."}]
+    },
+    "vi-VN": {
+      "world_summary": "Đây là bản tóm tắt tình báo hoàn toàn tổng hợp.",
+      "signals": [{
+        "id": "sig-example-001",
+        "title": "Ví dụ tín hiệu tổng hợp",
+        "what_happened": "Một hệ thống giả định đã hoàn tất thử nghiệm công khai.",
+        "why_now": "Các hợp đồng công khai đã sẵn sàng.",
+        "why_important": "Ví dụ thể hiện toàn bộ quy trình xác thực.",
+        "winners_losers": "Người bảo trì và kiểm thử có ví dụ tái lập được.",
+        "taiwan_impact": "Ví dụ thể hiện hợp đồng tác động Đài Loan.",
+        "what_next": "Chạy kiểm thử và xem kết quả xác thực."
+      }],
+      "taiwan_radar": [{"signal_id": "sig-example-001", "text": "Nội dung tổng hợp về tác động tại Đài Loan."}]
+    }
+  },
+  "structures": {
+    "en": {
+      "emerging_signal_ids": ["sig-example-001"],
+      "impact_chains": [{"id": "chain-example-001", "nodes": [{"label": "Synthetic trigger"}, {"label": "Synthetic impact"}]}],
+      "featured_chain_id": "chain-example-001"
+    },
+    "vi-VN": {
+      "emerging_signal_ids": ["sig-example-001"],
+      "impact_chains": [{"id": "chain-example-001", "nodes": [{"label": "Tác nhân tổng hợp"}, {"label": "Tác động tổng hợp"}]}],
+      "featured_chain_id": "chain-example-001"
+    }
+  },
+  "ready": {"status": "ready"}
+}

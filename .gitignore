@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+dist/
+build/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+deploy/
+# Production-only paths are ignored if a local operator accidentally creates
+# them. Public synthetic fixtures under data/ remain tracked.
+private/
+production/
+output/
+data/production/
+data/raw/
+data/candidates/
+data/evidence/
+config/sources.local.json
+config/source-registry.local.json
+config/verification-domains.local.json
+config/source-weights.local.json
+config/queries.local.json

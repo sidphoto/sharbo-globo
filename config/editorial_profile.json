@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "mode": "public-demo",
+  "primary_lens": [
+    "global chain effects",
+    "technology and society",
+    "economy and markets"
+  ],
+  "delivery": {
+    "language": "Traditional Chinese",
+    "target_signal_count": "5-20",
+    "top_signal_count": 5
+  },
+  "notes": "Synthetic public example. Personal preferences and production editorial policy are not distributed."
+}

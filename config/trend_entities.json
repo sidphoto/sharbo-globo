@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "min_history_days": 2,
+  "full_window_days": 7,
+  "max_emerging_signals": 4,
+  "entities": [
+    {
+      "id": "demo-infrastructure",
+      "icon": "↗",
+      "labels": {
+        "zh-TW": "合成基礎設施訊號",
+        "en": "Synthetic infrastructure signals",
+        "vi-VN": "Tín hiệu hạ tầng tổng hợp"
+      },
+      "all_groups": [["demo"], ["infrastructure"]],
+      "any_phrases": ["synthetic fixture trend"]
+    }
+  ]
+}

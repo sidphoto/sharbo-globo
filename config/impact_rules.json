@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "max_chains": 1,
+  "rules": [
+    {
+      "id": "demo-infrastructure-chain",
+      "priority": 1,
+      "title": {
+        "zh-TW": "合成事件 → 基礎設施 → 潛在影響",
+        "en": "Synthetic event → Infrastructure → Potential impact",
+        "vi-VN": "Sự kiện tổng hợp → Hạ tầng → Tác động tiềm tàng"
+      },
+      "trigger": {
+        "all_groups": [["demo"], ["infrastructure"]],
+        "any_phrases": ["synthetic fixture trend"]
+      },
+      "nodes": [
+        {"id": "demo-event", "icon": "•", "type": "event", "labels": {"zh-TW": "合成事件", "en": "Synthetic event", "vi-VN": "Sự kiện tổng hợp"}},
+        {"id": "demo-infrastructure", "icon": "⚙", "type": "risk", "labels": {"zh-TW": "基礎設施訊號", "en": "Infrastructure signal", "vi-VN": "Tín hiệu hạ tầng"}},
+        {"id": "demo-impact", "icon": "→", "type": "impact", "labels": {"zh-TW": "潛在影響", "en": "Potential impact", "vi-VN": "Tác động tiềm tàng"}}
+      ]
+    }
+  ]
+}

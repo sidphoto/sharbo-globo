@@ -1,0 +1,9 @@
+{
+  "reports": [
+    {
+      "date": "2026-01-15",
+      "signals": 5,
+      "summary": "Synthetic public demo fixture. No production source metadata is included."
+    }
+  ]
+}

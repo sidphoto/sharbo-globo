@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "mode": "public-demo",
+  "timezone": "Asia/Taipei",
+  "notes": "Public schema only. Production source registry, domains, weights, queries and verification strategy are not distributed.",
+  "sectors": {
+    "global_demo": {
+      "label": "Synthetic global discovery",
+      "allowed_domains": ["example.invalid"],
+      "topics": ["synthetic public demo topic"]
+    }
+  }
+}

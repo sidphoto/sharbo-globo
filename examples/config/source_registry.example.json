@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {
+      "id": "example-public-source",
+      "type": "news",
+      "trust_level": "tier_1",
+      "enabled": true
+    }
+  ]
+}
