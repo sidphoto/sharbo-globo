@@ -206,11 +206,20 @@ function enhanceRadar(){
   if(grid) grid.classList.add('public-radar-list');
 }
 
-function explainNote(title, body){
+function explainNote(key, title, body){
   const note = document.createElement('div');
   note.className = 'public-explain-note';
+  note.dataset.explain = key;
   note.innerHTML = `<strong>${escapeHtml(title)}</strong>${body}`;
   return note;
+}
+
+function ensureExplain(target, key, title, body, placement='append'){
+  if(!target || document.querySelector(`.public-explain-note[data-explain="${key}"]`)) return;
+  const note = explainNote(key, title, body);
+  if(placement === 'after') target.insertAdjacentElement('afterend', note);
+  else if(placement === 'before') target.insertAdjacentElement('beforebegin', note);
+  else target.append(note);
 }
 
 function addContractInspector(){
@@ -235,28 +244,23 @@ function addContractInspector(){
 }
 
 function applyExplainMode(){
-  document.querySelectorAll('.public-explain-note').forEach(node=>node.remove());
-  if(!explainMode) return;
+  if(!explainMode){
+    document.querySelectorAll('.public-explain-note').forEach(node=>node.remove());
+    return;
+  }
 
   if(currentView() === 'today'){
-    const top5 = document.querySelector('.public-top5');
-    if(top5) top5.append(explainNote('Why Top 5?', 'The public validator demonstrates cutoff-safe canonical records and authoritative source classes using synthetic fixtures. Production source weights and ranking policy are not distributed.'));
-
-    const emerging = document.querySelector('.public-emerging');
-    if(emerging) emerging.append(explainNote('Why Emerging?', 'The demo uses synthetic historical series to show persistence and maturity concepts. Production thresholds remain outside this repository.'));
-
-    const impact = document.querySelector('.public-impact');
-    if(impact) impact.append(explainNote('Why Impact Chain?', '<code>SUPPORTED</code> relationships require evidence signal IDs; <code>POTENTIAL</code> relationships must remain explicitly possible rather than asserted as fact.'));
+    ensureExplain(document.querySelector('.public-top5'),'top5','Why Top 5?','The public validator demonstrates cutoff-safe canonical records and authoritative source classes using synthetic fixtures. Production source weights and ranking policy are not distributed.');
+    ensureExplain(document.querySelector('.public-emerging'),'emerging','Why Emerging?','The demo uses synthetic historical series to show persistence and maturity concepts. Production thresholds remain outside this repository.');
+    ensureExplain(document.querySelector('.public-impact'),'impact','Why Impact Chain?','<code>SUPPORTED</code> relationships require evidence signal IDs; <code>POTENTIAL</code> relationships must remain explicitly possible rather than asserted as fact.');
   }
 
   if(currentView() === 'radar'){
-    const title = document.querySelector('.page-title');
-    if(title) title.insertAdjacentElement('afterend', explainNote('Radar contract', 'Search and filters operate only on the checked-in synthetic dataset. The public repository has no access path to private production data.'));
+    ensureExplain(document.querySelector('.page-title'),'radar','Radar contract','Search and filters operate only on the checked-in synthetic dataset. The public repository has no access path to private production data.','after');
   }
 
   if(currentView() === 'signal'){
-    const detail = document.querySelector('.detail-layout');
-    if(detail) detail.insertAdjacentElement('beforebegin', explainNote('Signal contract', 'Canonical IDs, required narrative fields, evidence references and localization structure are inspectable here; deployment-specific intelligence policy is intentionally absent.'));
+    ensureExplain(document.querySelector('.detail-layout'),'signal','Signal contract','Canonical IDs, required narrative fields, evidence references and localization structure are inspectable here; deployment-specific intelligence policy is intentionally absent.','before');
   }
 }
 
