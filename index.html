@@ -3,23 +3,162 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="SharBo Globo 蝦報全球：每日全球重要訊號、事件影響鏈、市場快覽與台灣關聯。" />
+  <meta name="description" content="SharBo Globo 蝦報全球：source-available 的全球情報雷達公開預覽，展示 evidence-first、fail-closed、多語與可解釋情報契約。" />
   <meta name="theme-color" content="#fbfaf6" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://github.githubassets.com; style-src 'self'; style-src-attr 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none" />
-  <title>SharBo Globo｜蝦報全球</title>
-  <link rel="manifest" href="./manifest.webmanifest" />
-  <link rel="stylesheet" href="./styles.css" />
-  <link rel="stylesheet" href="./i18n.css" />
-  <link rel="stylesheet" href="./exploration.css" />
-  <link rel="stylesheet" href="./insight_widgets.css" />
-  <link rel="stylesheet" href="./github_source.css" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'" />
+  <title>SharBo Globo｜蝦報。全球情報雷達</title>
+  <link rel="stylesheet" href="./landing.css" />
 </head>
 <body>
-  <div id="app" class="app-shell" aria-live="polite"></div>
-  <noscript>SharBo Globo requires JavaScript for interactive filtering and multilingual presentation.</noscript>
-  <script type="module" src="./app.js"></script>
-  <script type="module" src="./exploration.js"></script>
-  <script type="module" src="./insight_widgets.js"></script>
-  <script type="module" src="./github_source.js"></script>
+  <div class="landing-shell">
+    <header class="landing-nav">
+      <a class="landing-brand" href="./" aria-label="SharBo Globo home">
+        <span class="landing-brand-mark" aria-hidden="true">🦐</span>
+        <span>SharBo Globo<small>蝦報。全球情報雷達</small></span>
+      </a>
+      <nav class="landing-nav-links" aria-label="Public project navigation">
+        <a href="./README.md">Docs</a>
+        <a href="https://github.com/sidphoto/sharbo-globo">GitHub</a>
+        <a class="button primary" href="./demo.html?lang=zh-TW#/today">Open Demo</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-wrap">
+        <div class="hero-copy">
+          <h1>Verified signals from <span>global noise.</span></h1>
+          <p>SharBo Globo 把全球資訊轉成可驗證、可排序、可連結、可多語發布的情報訊號。公開版展示契約、驗證器與合成資料，不包含任何 Production 來源、查詢、權重或營運情報。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="./demo.html?lang=zh-TW#/today">Open Interactive Demo</a>
+            <a class="button ghost" href="https://github.com/sidphoto/sharbo-globo">View on GitHub</a>
+          </div>
+          <div class="hero-note">Source-Available · PolyForm Noncommercial 1.0.0 · Synthetic Public Preview</div>
+        </div>
+
+        <div class="product-preview" aria-label="Synthetic SharBo dashboard preview">
+          <div class="preview-topbar">
+            <div class="preview-brand"><span aria-hidden="true">🦐</span> SharBo Globo</div>
+            <div class="preview-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+          <div class="preview-body">
+            <aside class="preview-sidebar" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></aside>
+            <div class="preview-content">
+              <div class="preview-hero">
+                <strong>Global Intelligence Radar</strong>
+                <p>Synthetic public preview with cutoff-safe signals and stable canonical IDs.</p>
+                <div class="preview-map" aria-hidden="true"></div>
+              </div>
+              <div class="preview-list">
+                <div class="preview-row"><span class="preview-rank">01</span><span class="preview-score">97</span><span class="preview-line"><b></b><small></small></span></div>
+                <div class="preview-row"><span class="preview-rank">02</span><span class="preview-score">93</span><span class="preview-line"><b></b><small></small></span></div>
+                <div class="preview-row"><span class="preview-rank">03</span><span class="preview-score">89</span><span class="preview-line"><b></b><small></small></span></div>
+              </div>
+              <div class="preview-bottom">
+                <div class="preview-panel"><h3>Emerging Signals</h3><div class="spark" aria-hidden="true"></div></div>
+                <div class="preview-panel"><h3>Impact Chain</h3><div class="impact-track" aria-hidden="true"><span></span><i></i><span></span><i></i><span></span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="principles">
+        <div class="section-header">
+          <h2>不是另一個 AI 新聞摘要器。</h2>
+          <p>SharBo 把資料完整性、時間截止、來源證據與多語一致性放在生成之前。缺資料時不是「盡量產出」，而是 fail closed。</p>
+        </div>
+        <div class="principle-grid">
+          <article class="principle"><div class="principle-icon">01</div><strong>Evidence-first</strong><p>訊號先有證據與來源等級，再進入排序與呈現。</p></article>
+          <article class="principle"><div class="principle-icon">02</div><strong>Cutoff-safe</strong><p>時間窗是資料契約，不讓 window 外資訊偷偷進入當期結果。</p></article>
+          <article class="principle"><div class="principle-icon">03</div><strong>Fail-closed</strong><p>資料、翻譯或結構未完整通過驗證時，保留 last-known-good。</p></article>
+          <article class="principle"><div class="principle-icon">04</div><strong>Atomic multilingual</strong><p>zh-TW、English、Tiếng Việt 共用 stable IDs，完成後才一起發布。</p></article>
+        </div>
+      </section>
+
+      <section class="surface-section">
+        <div class="section">
+          <div class="section-header">
+            <h2>看的是訊號，不是卡片牆。</h2>
+            <p>公開 Demo 採用和正式產品同世代的資訊層級：先看 Top 5，再看趨勢、影響鏈、台灣關聯與市場脈絡。</p>
+          </div>
+          <div class="surface-grid">
+            <article class="surface-card surface-top5">
+              <h3>Global Top 5</h3>
+              <div class="surface-signal"><span class="n">01</span><span class="s">97</span><span><b>Synthetic policy signal</b><small>PRIMARY · inside canonical window</small></span></div>
+              <div class="surface-signal"><span class="n">02</span><span class="s">93</span><span><b>Hypothetical supply-chain event</b><small>CONFIRMED · stable signal ID</small></span></div>
+              <div class="surface-signal"><span class="n">03</span><span class="s">89</span><span><b>Demo market transmission signal</b><small>PRIMARY · synthetic evidence</small></span></div>
+              <div class="surface-signal"><span class="n">04</span><span class="s">87</span><span><b>Fictional regional risk update</b><small>CONFIRMED · cutoff safe</small></span></div>
+              <div class="surface-signal"><span class="n">05</span><span class="s">85</span><span><b>Illustrative technology demand shift</b><small>PRIMARY · public fixture</small></span></div>
+            </article>
+            <div class="mini-stack">
+              <article class="mini-block"><h3>Emerging Signals</h3><p>用合成歷史序列示範 persistence、source diversity 與 maturity contract；Production thresholds 不公開。</p></article>
+              <article class="mini-block"><h3>Impact Chain</h3><p>SUPPORTED 邊必須有 evidence signal IDs；POTENTIAL 邊必須明確標示為可能關係。</p></article>
+              <article class="mini-block"><h3>Taiwan Radar</h3><p>展示 canonical signal 如何投影成台灣關聯視角，不帶入任何真實 Production intelligence。</p></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h2>SharBo 的差異，是「誰有權決定可以發布」。</h2>
+          <p>LLM 可以協助文字處理，但不能繞過資料契約與 validation gate。</p>
+        </div>
+        <div class="compare-grid">
+          <div class="compare-col">
+            <h3>Generic AI news summary</h3>
+            <div class="compare-row"><b>–</b><span>Summary-first</span></div>
+            <div class="compare-row"><b>–</b><span>Best-effort output</span></div>
+            <div class="compare-row"><b>–</b><span>Translation as a downstream add-on</span></div>
+            <div class="compare-row"><b>–</b><span>Flat article list</span></div>
+          </div>
+          <div class="compare-col sharbo">
+            <h3>SharBo Globo</h3>
+            <div class="compare-row"><b>✓</b><span>Evidence-first</span></div>
+            <div class="compare-row"><b>✓</b><span>Fail-closed validation</span></div>
+            <div class="compare-row"><b>✓</b><span>Atomic multilingual contract</span></div>
+            <div class="compare-row"><b>✓</b><span>Signal + trend + impact relationships</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="boundary">
+        <div class="section-header">
+          <h2>Public framework，Private intelligence。</h2>
+          <p>公開版分享可重用的方法與驗證器；正式情報資產維持獨立私有 Git history。這條邊界是產品的一部分，不是文件備註。</p>
+        </div>
+        <div class="boundary">
+          <div class="boundary-side"><h3>PUBLIC</h3><ul><li>Contracts & validators</li><li>UI & reference implementation</li><li>Synthetic fixtures</li><li>Localization contract</li><li>Architecture & contribution docs</li></ul></div>
+          <div class="boundary-divider">SECURITY BOUNDARY</div>
+          <div class="boundary-side"><h3>PRIVATE</h3><ul><li>Real source registry</li><li>Discovery queries</li><li>Trust strategy & source weights</li><li>Production data & archives</li><li>Credentials & operations</li></ul></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header"><h2>Pipeline</h2><p>公開 repo 保留可驗證的流程邊界，但不提供 deployment-specific intelligence policy。</p></div>
+        <div class="pipeline" aria-label="SharBo public architecture pipeline">
+          <div class="pipeline-step">Collector</div><span class="pipeline-arrow">→</span>
+          <div class="pipeline-step">Normalizer</div><span class="pipeline-arrow">→</span>
+          <div class="pipeline-step">Verifier</div><span class="pipeline-arrow">→</span>
+          <div class="pipeline-step">Intelligence</div><span class="pipeline-arrow">→</span>
+          <div class="pipeline-step">Localization</div><span class="pipeline-arrow">→</span>
+          <div class="pipeline-step">Validation</div><span class="pipeline-arrow">→</span>
+          <div class="pipeline-step">Presentation</div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="final-cta-inner">
+          <div><h2>Open the synthetic intelligence surface.</h2><p>切換三語、探索 Radar、Emerging Signals、Impact Chain 與 Signal Detail；所有內容都來自公開合成 fixture。</p></div>
+          <a class="button" href="./demo.html?lang=zh-TW#/today">Launch Demo →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>SharBo Globo · 蝦報。全球情報雷達</span>
+      <span>Source-Available · Production intelligence excluded</span>
+    </footer>
+  </div>
 </body>
 </html>
