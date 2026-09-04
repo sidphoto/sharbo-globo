@@ -1,6 +1,8 @@
-name: Deploy SharBo Globo Public Demo to Pages
+name: Deploy SharBo Globo Public Site to Pages
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -17,7 +19,7 @@ jobs:
     uses: ./.github/workflows/validation.yml
 
   deploy:
-    name: Deploy public demo
+    name: Deploy public site
     needs: validate
     environment:
       name: github-pages
