@@ -1,10 +1,10 @@
 {
-  "name": "SharBo Globo｜蝦報全球",
+  "name": "SharBo Globo｜蝦報全球 Public Demo",
   "short_name": "SharBo Globo",
-  "start_url": "./#/today",
+  "start_url": "./demo.html?lang=zh-TW#/today",
   "display": "standalone",
   "background_color": "#fbfaf6",
   "theme_color": "#fbfaf6",
-  "description": "全球重要訊號、事件影響鏈、市場快覽與台灣關聯。",
+  "description": "Synthetic public demo of SharBo Globo global intelligence contracts and multilingual presentation.",
   "icons": []
 }

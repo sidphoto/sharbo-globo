@@ -36,6 +36,7 @@ jobs:
           node --check insight_widgets.js
           node --check github_source.js
           node --check render_security.js
+          node --check public-v02.js
       - name: Run JavaScript regressions
         run: |
           node tests/test_personalization.mjs
@@ -48,6 +49,8 @@ jobs:
         run: pytest
       - name: Public repository leak gate
         run: python scripts/validate_public_repo.py
+      - name: Public UI boundary gate
+        run: python scripts/validate_public_ui_boundary.py
       - name: Validate multilingual contract
         run: python scripts/validate_i18n.py
       - name: Validate demo report contract
