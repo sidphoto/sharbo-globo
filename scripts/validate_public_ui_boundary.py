@@ -15,6 +15,7 @@ PUBLIC_UI_FILES = (
     Path("index.html"),
     Path("demo.html"),
     Path("landing.css"),
+    Path("landing-base.css"),
     Path("landing.js"),
     Path("public-v02.css"),
     Path("public-v02.js"),
