@@ -1,0 +1,1 @@
+Temporary implementation note for PR review: the mascot asset is verified byte-for-byte against the local approved WebP (Git blob SHA 632c6a974a4880fa78b063c8f4de68c65625ed9b, 9,588 bytes). The hero now renders the mascot as a real DOM image with a dedicated self-hosted stylesheet fallback.
