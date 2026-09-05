@@ -3,162 +3,281 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="SharBo Globo 蝦報全球：source-available 的全球情報雷達公開預覽，展示 evidence-first、fail-closed、多語與可解釋情報契約。" />
-  <meta name="theme-color" content="#fbfaf6" />
+  <meta name="description" content="SharBo Globo 蝦報。全球情報雷達官方網站：把全球資訊雜訊整理成可驗證、可排序、可追蹤的情報訊號。" />
+  <meta name="theme-color" content="#ffffff" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'" />
   <title>SharBo Globo｜蝦報。全球情報雷達</title>
   <link rel="stylesheet" href="./landing.css" />
+  <script src="./landing.js" defer></script>
 </head>
 <body>
-  <div class="landing-shell">
-    <header class="landing-nav">
-      <a class="landing-brand" href="./" aria-label="SharBo Globo home">
-        <span class="landing-brand-mark" aria-hidden="true">🦐</span>
-        <span>SharBo Globo<small>蝦報。全球情報雷達</small></span>
+  <a class="skip-link" href="#main" data-i18n="skip">跳到主要內容</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="./" aria-label="SharBo Globo home">
+        <span class="brand-mark" aria-hidden="true">🦐</span>
+        <span class="brand-copy">
+          <strong>SharBo Globo</strong>
+          <small data-i18n="brandSub">蝦報。全球情報雷達</small>
+        </span>
       </a>
-      <nav class="landing-nav-links" aria-label="Public project navigation">
-        <a href="./README.md">Docs</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-i18n-aria="menuLabel">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="#features" data-i18n="navFeatures">功能介紹</a>
+        <a href="#how" data-i18n="navHow">如何運作</a>
+        <a href="#story" data-i18n="navStory">關於蝦報</a>
         <a href="https://github.com/sidphoto/sharbo-globo">GitHub</a>
-        <a class="button primary" href="./demo.html?lang=zh-TW#/today">Open Demo</a>
       </nav>
-    </header>
 
-    <main>
-      <section class="hero-wrap">
+      <div class="nav-actions">
+        <div class="language-switcher" aria-label="Language switcher">
+          <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            <span data-lang-current>繁中</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg>
+          </button>
+          <div class="lang-menu" role="menu">
+            <button type="button" role="menuitem" data-lang="zh-TW">繁中</button>
+            <button type="button" role="menuitem" data-lang="en">English</button>
+            <button type="button" role="menuitem" data-lang="vi-VN">Tiếng Việt</button>
+          </div>
+        </div>
+        <a class="button primary nav-product" href="https://sharbo-globo-production.vercel.app/#/today">
+          <span data-i18n="navToday">看今天的蝦報</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-shell">
         <div class="hero-copy">
-          <h1>Verified signals from <span>global noise.</span></h1>
-          <p>SharBo Globo 把全球資訊轉成可驗證、可排序、可連結、可多語發布的情報訊號。公開版展示契約、驗證器與合成資料，不包含任何 Production 來源、查詢、權重或營運情報。</p>
+          <p class="hero-kicker">VERIFIED SIGNALS FROM GLOBAL NOISE.</p>
+          <h1><span class="accent" data-i18n="heroBrand">蝦報。</span><span data-i18n="heroTitle">全球情報雷達</span></h1>
+          <p class="hero-lead" data-i18n="heroLead">從全球資訊雜訊中，找出真正值得關注的訊號。</p>
+          <p class="hero-body" data-i18n="heroBody">驗證、排序、串連全球事件，幫你更快理解正在發生什麼，以及它可能如何影響台灣。</p>
           <div class="hero-actions">
-            <a class="button primary" href="./demo.html?lang=zh-TW#/today">Open Interactive Demo</a>
-            <a class="button ghost" href="https://github.com/sidphoto/sharbo-globo">View on GitHub</a>
+            <a class="button primary button-lg" href="https://sharbo-globo-production.vercel.app/#/today">
+              <span data-i18n="ctaToday">看今天的蝦報</span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"/></svg>
+            </a>
+            <a class="button secondary button-lg" href="#features" data-i18n="ctaLearn">了解 SharBo Globo</a>
           </div>
-          <div class="hero-note">Source-Available · PolyForm Noncommercial 1.0.0 · Synthetic Public Preview</div>
+          <div class="hero-links">
+            <a href="https://github.com/sidphoto/sharbo-globo">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.53 9.53 0 0 1 12 6.82c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+              GitHub
+            </a>
+            <a href="./demo.html?lang=zh-TW#/today">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 1.74 3h10.52A2 2 0 0 0 19 17l-5-9V3M7.5 14h9"/></svg>
+              <span data-i18n="demoLink">互動 Demo</span>
+            </a>
+          </div>
+          <div class="proof-row" aria-label="SharBo principles">
+            <div><span class="proof-icon">◎</span><span><b data-i18n="proofGlobal">全球視野</b><small data-i18n="proofGlobalSub">聚焦真正重要的事</small></span></div>
+            <div><span class="proof-icon">◇</span><span><b data-i18n="proofVerify">可驗證</b><small data-i18n="proofVerifySub">不是只依賴單一來源</small></span></div>
+            <div><span class="proof-icon">⌁</span><span><b data-i18n="proofConnect">有脈絡</b><small data-i18n="proofConnectSub">看見事件間的關聯</small></span></div>
+            <div><span class="proof-icon">文</span><span><b data-i18n="proofLang">三語閱讀</b><small>繁中 · English · Tiếng Việt</small></span></div>
+          </div>
         </div>
 
-        <div class="product-preview" aria-label="Synthetic SharBo dashboard preview">
-          <div class="preview-topbar">
-            <div class="preview-brand"><span aria-hidden="true">🦐</span> SharBo Globo</div>
-            <div class="preview-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="hero-visual" aria-label="SharBo Globo product preview">
+          <div class="orb orb-a"></div>
+          <div class="orb orb-b"></div>
+          <div class="product-window">
+            <div class="window-bar">
+              <div class="window-brand"><span>🦐</span><strong>SharBo Globo</strong></div>
+              <div class="window-tabs"><span data-i18n="previewToday">今日情報</span><span data-i18n="previewMarket">市場雷達</span><span data-i18n="previewImpact">台灣影響</span></div>
+              <div class="window-dots"><i></i><i></i><i></i></div>
+            </div>
+            <div class="window-content">
+              <div class="preview-main">
+                <p class="preview-date" data-i18n="previewDate">每日全球情報</p>
+                <h2 data-i18n="previewTitle">今日全球重點</h2>
+                <ol class="signal-list">
+                  <li><span>1</span><div><b data-i18n="signalOne">全球政策與市場訊號</b><small><em data-i18n="tagGlobal">全球視角</em><em data-i18n="tagMarket">市場</em></small></div></li>
+                  <li><span>2</span><div><b data-i18n="signalTwo">供應鏈與產業變化</b><small><em data-i18n="tagIndustry">產業</em><em data-i18n="tagImpact">影響鏈</em></small></div></li>
+                  <li><span>3</span><div><b data-i18n="signalThree">台灣關聯與後續觀察</b><small><em data-i18n="tagTaiwan">台灣</em><em data-i18n="tagWatch">追蹤</em></small></div></li>
+                </ol>
+              </div>
+              <aside class="market-panel">
+                <div class="market-head"><b data-i18n="marketPanel">市場雷達</b><span>LIVE</span></div>
+                <div class="market-row"><span>S&amp;P 500</span><b>+0.42%</b></div>
+                <div class="market-row"><span>NASDAQ</span><b>+0.67%</b></div>
+                <div class="market-row"><span>TAIEX</span><b>+0.48%</b></div>
+                <div class="mini-chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </aside>
+            </div>
           </div>
-          <div class="preview-body">
-            <aside class="preview-sidebar" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></aside>
-            <div class="preview-content">
-              <div class="preview-hero">
-                <strong>Global Intelligence Radar</strong>
-                <p>Synthetic public preview with cutoff-safe signals and stable canonical IDs.</p>
-                <div class="preview-map" aria-hidden="true"></div>
-              </div>
-              <div class="preview-list">
-                <div class="preview-row"><span class="preview-rank">01</span><span class="preview-score">97</span><span class="preview-line"><b></b><small></small></span></div>
-                <div class="preview-row"><span class="preview-rank">02</span><span class="preview-score">93</span><span class="preview-line"><b></b><small></small></span></div>
-                <div class="preview-row"><span class="preview-rank">03</span><span class="preview-score">89</span><span class="preview-line"><b></b><small></small></span></div>
-              </div>
-              <div class="preview-bottom">
-                <div class="preview-panel"><h3>Emerging Signals</h3><div class="spark" aria-hidden="true"></div></div>
-                <div class="preview-panel"><h3>Impact Chain</h3><div class="impact-track" aria-hidden="true"><span></span><i></i><span></span><i></i><span></span></div></div>
-              </div>
+          <div class="hero-note-card">
+            <span>✦</span>
+            <p data-i18n="visualNote">更清楚的全球視野，從這裡開始。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section features">
+      <div class="section-shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-label" data-i18n="featuresLabel">每天，SharBo 幫你做什麼？</p>
+            <h2 data-i18n="featuresTitle">把大量資訊，整理成更好讀的情報視角。</h2>
+          </div>
+          <a class="text-link" href="https://sharbo-globo-production.vercel.app/#/today"><span data-i18n="exploreFeatures">探索今天的情報</span><span>→</span></a>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card coral"><div class="feature-icon">▤</div><h3>Top Signals</h3><p class="feature-sub" data-i18n="featureTopSub">今日最重要的全球事件</p><p data-i18n="featureTopBody">快速掌握真正值得關注的重點。</p></article>
+          <article class="feature-card blue"><div class="feature-icon">◉</div><h3>Emerging Signals</h3><p class="feature-sub" data-i18n="featureEmergingSub">正在形成、值得追蹤的新訊號</p><p data-i18n="featureEmergingBody">提早發現可能影響未來的重要動向。</p></article>
+          <article class="feature-card violet"><div class="feature-icon">⌘</div><h3>Impact Chains</h3><p class="feature-sub" data-i18n="featureImpactSub">看懂事件如何彼此牽動</p><p data-i18n="featureImpactBody">理解事件之間的因果與影響鏈。</p></article>
+          <article class="feature-card green"><div class="feature-icon">台</div><h3>Taiwan Impact</h3><p class="feature-sub" data-i18n="featureTaiwanSub">從台灣角度理解全球變化</p><p data-i18n="featureTaiwanBody">分析事件對台灣可能造成的影響與風險。</p></article>
+          <article class="feature-card amber"><div class="feature-icon">▥</div><h3>Market Radar</h3><p class="feature-sub" data-i18n="featureMarketSub">市場與產業脈動</p><p data-i18n="featureMarketBody">追蹤金融市場、產業與關鍵趨勢。</p></article>
+          <article class="feature-card cyan"><div class="feature-icon">文</div><h3 data-i18n="featureLangTitle">三語閱讀</h3><p class="feature-sub">繁體中文 · English · Tiếng Việt</p><p data-i18n="featureLangBody">一份情報，三種語言，看見更大的世界。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section difference">
+      <div class="section-shell difference-grid">
+        <div class="difference-visual" aria-hidden="true">
+          <div class="noise-card"><span>Less Noise</span><strong>More Signal</strong></div>
+          <div class="radar-lines"><i></i><i></i><i></i><b></b></div>
+          <div class="shrimp-dot">🦐</div>
+        </div>
+        <div class="difference-copy">
+          <p class="section-label" data-i18n="differenceLabel">不只是摘要，而是有結構的情報閱讀</p>
+          <h2 data-i18n="differenceTitle">我們整理的是訊號，而不只是文章。</h2>
+          <p data-i18n="differenceBody">新聞很多，摘要也很多。SharBo Globo 想解決的不是「幫你把文章縮短」，而是：哪些值得看？哪些只是重複？哪些訊號正在形成？事件彼此有什麼關係？哪些事情可能影響台灣？</p>
+          <div class="compare-panel">
+            <div>
+              <h3 data-i18n="compareGeneric">一般新聞整理</h3>
+              <ul class="negative">
+                <li data-i18n="genericOne">資訊很多但容易雜亂</li>
+                <li data-i18n="genericTwo">容易重複</li>
+                <li data-i18n="genericThree">難追蹤後續</li>
+                <li data-i18n="genericFour">事件關聯性不清楚</li>
+              </ul>
+            </div>
+            <div class="compare-sharbo">
+              <h3>SharBo Globo</h3>
+              <ul class="positive">
+                <li data-i18n="sharboOne">先驗證再呈現</li>
+                <li data-i18n="sharboTwo">整理成可排序訊號</li>
+                <li data-i18n="sharboThree">保留可追蹤脈絡</li>
+                <li data-i18n="sharboFour">看懂影響鏈與台灣視角</li>
+                <li data-i18n="sharboFive">支援三語閱讀</li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section" id="principles">
-        <div class="section-header">
-          <h2>不是另一個 AI 新聞摘要器。</h2>
-          <p>SharBo 把資料完整性、時間截止、來源證據與多語一致性放在生成之前。缺資料時不是「盡量產出」，而是 fail closed。</p>
-        </div>
-        <div class="principle-grid">
-          <article class="principle"><div class="principle-icon">01</div><strong>Evidence-first</strong><p>訊號先有證據與來源等級，再進入排序與呈現。</p></article>
-          <article class="principle"><div class="principle-icon">02</div><strong>Cutoff-safe</strong><p>時間窗是資料契約，不讓 window 外資訊偷偷進入當期結果。</p></article>
-          <article class="principle"><div class="principle-icon">03</div><strong>Fail-closed</strong><p>資料、翻譯或結構未完整通過驗證時，保留 last-known-good。</p></article>
-          <article class="principle"><div class="principle-icon">04</div><strong>Atomic multilingual</strong><p>zh-TW、English、Tiếng Việt 共用 stable IDs，完成後才一起發布。</p></article>
-        </div>
-      </section>
-
-      <section class="surface-section">
-        <div class="section">
-          <div class="section-header">
-            <h2>看的是訊號，不是卡片牆。</h2>
-            <p>公開 Demo 採用和正式產品同世代的資訊層級：先看 Top 5，再看趨勢、影響鏈、台灣關聯與市場脈絡。</p>
+    <section id="how" class="section workflow-section">
+      <div class="section-shell">
+        <div class="section-heading split-heading workflow-heading">
+          <div>
+            <p class="section-label" data-i18n="workflowLabel">SharBo 如何整理每日情報？</p>
+            <h2 data-i18n="workflowTitle">從蒐集到發布，每一步都有明確角色。</h2>
           </div>
-          <div class="surface-grid">
-            <article class="surface-card surface-top5">
-              <h3>Global Top 5</h3>
-              <div class="surface-signal"><span class="n">01</span><span class="s">97</span><span><b>Synthetic policy signal</b><small>PRIMARY · inside canonical window</small></span></div>
-              <div class="surface-signal"><span class="n">02</span><span class="s">93</span><span><b>Hypothetical supply-chain event</b><small>CONFIRMED · stable signal ID</small></span></div>
-              <div class="surface-signal"><span class="n">03</span><span class="s">89</span><span><b>Demo market transmission signal</b><small>PRIMARY · synthetic evidence</small></span></div>
-              <div class="surface-signal"><span class="n">04</span><span class="s">87</span><span><b>Fictional regional risk update</b><small>CONFIRMED · cutoff safe</small></span></div>
-              <div class="surface-signal"><span class="n">05</span><span class="s">85</span><span><b>Illustrative technology demand shift</b><small>PRIMARY · public fixture</small></span></div>
-            </article>
-            <div class="mini-stack">
-              <article class="mini-block"><h3>Emerging Signals</h3><p>用合成歷史序列示範 persistence、source diversity 與 maturity contract；Production thresholds 不公開。</p></article>
-              <article class="mini-block"><h3>Impact Chain</h3><p>SUPPORTED 邊必須有 evidence signal IDs；POTENTIAL 邊必須明確標示為可能關係。</p></article>
-              <article class="mini-block"><h3>Taiwan Radar</h3><p>展示 canonical signal 如何投影成台灣關聯視角，不帶入任何真實 Production intelligence。</p></article>
-            </div>
-          </div>
+          <a class="text-link" href="./ARCHITECTURE.md"><span data-i18n="architectureLink">查看技術架構詳情</span><span>→</span></a>
         </div>
-      </section>
+        <div class="workflow" aria-label="SharBo workflow">
+          <div class="workflow-step"><span>01</span><div class="workflow-icon">⌂</div><b data-i18n="stepCollect">蒐集</b><small>Collector</small></div><i>→</i>
+          <div class="workflow-step"><span>02</span><div class="workflow-icon">≡</div><b data-i18n="stepNormalize">整理與去重</b><small>Normalizer / Deduper</small></div><i>→</i>
+          <div class="workflow-step"><span>03</span><div class="workflow-icon">✓</div><b data-i18n="stepVerify">驗證</b><small>Verifier</small></div><i>→</i>
+          <div class="workflow-step"><span>04</span><div class="workflow-icon">↗</div><b data-i18n="stepScore">判斷重要性</b><small>Intelligence Scoring</small></div><i>→</i>
+          <div class="workflow-step"><span>05</span><div class="workflow-icon">⌁</div><b data-i18n="stepLink">找出事件關係</b><small>Impact Linking</small></div><i>→</i>
+          <div class="workflow-step"><span>06</span><div class="workflow-icon">文</div><b data-i18n="stepLocalize">多語整理</b><small>Localization</small></div><i>→</i>
+          <div class="workflow-step"><span>07</span><div class="workflow-icon">⚗</div><b data-i18n="stepValidate">發布前檢查</b><small>Validation Gate</small></div><i>→</i>
+          <div class="workflow-step"><span>08</span><div class="workflow-icon">▣</div><b data-i18n="stepPresent">呈現</b><small>Presentation</small></div>
+        </div>
+      </div>
+    </section>
 
-      <section class="section">
-        <div class="section-header">
-          <h2>SharBo 的差異，是「誰有權決定可以發布」。</h2>
-          <p>LLM 可以協助文字處理，但不能繞過資料契約與 validation gate。</p>
+    <section class="section language-band">
+      <div class="section-shell language-grid">
+        <div>
+          <p class="section-label" data-i18n="languageLabel">一份情報，三種語言</p>
+          <h2 data-i18n="languageTitle">繁體中文、English、Tiếng Việt。</h2>
+          <p data-i18n="languageBody">介面與內容維持同一套訊號結構，不需要在三份互不相干的報告之間來回切換。</p>
         </div>
-        <div class="compare-grid">
-          <div class="compare-col">
-            <h3>Generic AI news summary</h3>
-            <div class="compare-row"><b>–</b><span>Summary-first</span></div>
-            <div class="compare-row"><b>–</b><span>Best-effort output</span></div>
-            <div class="compare-row"><b>–</b><span>Translation as a downstream add-on</span></div>
-            <div class="compare-row"><b>–</b><span>Flat article list</span></div>
-          </div>
-          <div class="compare-col sharbo">
-            <h3>SharBo Globo</h3>
-            <div class="compare-row"><b>✓</b><span>Evidence-first</span></div>
-            <div class="compare-row"><b>✓</b><span>Fail-closed validation</span></div>
-            <div class="compare-row"><b>✓</b><span>Atomic multilingual contract</span></div>
-            <div class="compare-row"><b>✓</b><span>Signal + trend + impact relationships</span></div>
-          </div>
+        <div class="language-cards">
+          <button type="button" data-lang="zh-TW"><span>繁</span><b>繁體中文</b><small>預設介面</small></button>
+          <button type="button" data-lang="en"><span>EN</span><b>English</b><small>Global reading</small></button>
+          <button type="button" data-lang="vi-VN"><span>VI</span><b>Tiếng Việt</b><small>Đọc bằng tiếng Việt</small></button>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section" id="boundary">
-        <div class="section-header">
-          <h2>Public framework，Private intelligence。</h2>
-          <p>公開版分享可重用的方法與驗證器；正式情報資產維持獨立私有 Git history。這條邊界是產品的一部分，不是文件備註。</p>
+    <section class="section gateway-section">
+      <div class="section-shell">
+        <div class="gateway-grid">
+          <article class="gateway-card product-card">
+            <div class="gateway-icon">▤</div>
+            <p data-i18n="gatewayProductLabel">我只是想看蝦報</p>
+            <h3 data-i18n="gatewayProductTitle">進入 SharBo Globo</h3>
+            <span data-i18n="gatewayProductBody">直接閱讀今天的全球情報。</span>
+            <a class="button primary" href="https://sharbo-globo-production.vercel.app/#/today"><span data-i18n="gatewayProductCta">看今天的蝦報</span><span>→</span></a>
+          </article>
+          <article class="gateway-card github-card">
+            <div class="gateway-icon">&lt;/&gt;</div>
+            <p data-i18n="gatewayGithubLabel">我想知道它怎麼做</p>
+            <h3>GitHub Repo</h3>
+            <span data-i18n="gatewayGithubBody">探索架構、文件、原始碼與公開契約。</span>
+            <a class="button github-button" href="https://github.com/sidphoto/sharbo-globo">GitHub Repo <span>→</span></a>
+          </article>
+          <article class="gateway-card demo-card">
+            <div class="gateway-icon">⚗</div>
+            <p data-i18n="gatewayDemoLabel">先體驗公開架構</p>
+            <h3>Interactive Demo</h3>
+            <span data-i18n="gatewayDemoBody">使用合成資料體驗公開 UI 與 Explain Mode。</span>
+            <a class="button demo-button" href="./demo.html?lang=zh-TW#/today"><span data-i18n="gatewayDemoCta">開啟 Demo</span><span>→</span></a>
+          </article>
         </div>
-        <div class="boundary">
-          <div class="boundary-side"><h3>PUBLIC</h3><ul><li>Contracts & validators</li><li>UI & reference implementation</li><li>Synthetic fixtures</li><li>Localization contract</li><li>Architecture & contribution docs</li></ul></div>
-          <div class="boundary-divider">SECURITY BOUNDARY</div>
-          <div class="boundary-side"><h3>PRIVATE</h3><ul><li>Real source registry</li><li>Discovery queries</li><li>Trust strategy & source weights</li><li>Production data & archives</li><li>Credentials & operations</li></ul></div>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section">
-        <div class="section-header"><h2>Pipeline</h2><p>公開 repo 保留可驗證的流程邊界，但不提供 deployment-specific intelligence policy。</p></div>
-        <div class="pipeline" aria-label="SharBo public architecture pipeline">
-          <div class="pipeline-step">Collector</div><span class="pipeline-arrow">→</span>
-          <div class="pipeline-step">Normalizer</div><span class="pipeline-arrow">→</span>
-          <div class="pipeline-step">Verifier</div><span class="pipeline-arrow">→</span>
-          <div class="pipeline-step">Intelligence</div><span class="pipeline-arrow">→</span>
-          <div class="pipeline-step">Localization</div><span class="pipeline-arrow">→</span>
-          <div class="pipeline-step">Validation</div><span class="pipeline-arrow">→</span>
-          <div class="pipeline-step">Presentation</div>
+    <section id="story" class="section story-section">
+      <div class="section-shell story-grid">
+        <div class="story-visual" aria-hidden="true"><div class="sun"></div><div class="ridge ridge-a"></div><div class="ridge ridge-b"></div><div class="story-person">●</div></div>
+        <div class="story-copy">
+          <p class="section-label" data-i18n="storyLabel">這個專案怎麼開始的？</p>
+          <h2 data-i18n="storyTitle">一開始，它只是我每天自己看的晨報。</h2>
+          <p data-i18n="storyBodyOne">我每天會整理全球發生的重要事情，判斷哪些值得持續追蹤，以及它們和台灣、市場、產業之間可能有什麼關係。</p>
+          <p data-i18n="storyBodyTwo">前陣子在一次二次面試裡，面試官也和我分享了他的資訊整理方法，讓我重新思考這套流程。所以我決定把自己的做法整理成 SharBo Globo，也把其中可以公開的架構分享出來。</p>
+          <blockquote data-i18n="storyQuote">把每天的資訊整理，變成一套可以持續改進的情報方法。</blockquote>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section class="final-cta">
-        <div class="final-cta-inner">
-          <div><h2>Open the synthetic intelligence surface.</h2><p>切換三語、探索 Radar、Emerging Signals、Impact Chain 與 Signal Detail；所有內容都來自公開合成 fixture。</p></div>
-          <a class="button" href="./demo.html?lang=zh-TW#/today">Launch Demo →</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <span>SharBo Globo · 蝦報。全球情報雷達</span>
-      <span>Source-Available · Production intelligence excluded</span>
-    </footer>
-  </div>
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-brand">
+        <span class="brand-mark small" aria-hidden="true">🦐</span>
+        <div><strong>SharBo Globo</strong><small data-i18n="brandSub">蝦報。全球情報雷達</small></div>
+      </div>
+      <div class="footer-links">
+        <a href="#features" data-i18n="navFeatures">功能介紹</a>
+        <a href="#how" data-i18n="navHow">如何運作</a>
+        <a href="#story" data-i18n="navStory">關於蝦報</a>
+        <a href="https://github.com/sidphoto/sharbo-globo">GitHub</a>
+        <a href="./demo.html?lang=zh-TW#/today">Demo</a>
+      </div>
+      <div class="footer-meta">
+        <span>Source-available</span>
+        <span>PolyForm Noncommercial 1.0.0</span>
+        <a href="./DISCLAIMER.md" data-i18n="disclaimer">免責聲明</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

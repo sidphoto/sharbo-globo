@@ -1,0 +1,74 @@
+const translations = {
+  "zh-TW": {
+    skip:"跳到主要內容",brandSub:"蝦報。全球情報雷達",menuLabel:"開啟導覽選單",navFeatures:"功能介紹",navHow:"如何運作",navStory:"關於蝦報",navToday:"看今天的蝦報",heroBrand:"蝦報。",heroTitle:"全球情報雷達",heroLead:"從全球資訊雜訊中，找出真正值得關注的訊號。",heroBody:"驗證、排序、串連全球事件，幫你更快理解正在發生什麼，以及它可能如何影響台灣。",ctaToday:"看今天的蝦報",ctaLearn:"了解 SharBo Globo",demoLink:"互動 Demo",proofGlobal:"全球視野",proofGlobalSub:"聚焦真正重要的事",proofVerify:"可驗證",proofVerifySub:"不是只依賴單一來源",proofConnect:"有脈絡",proofConnectSub:"看見事件間的關聯",proofLang:"三語閱讀",previewToday:"今日情報",previewMarket:"市場雷達",previewImpact:"台灣影響",previewDate:"每日全球情報",previewTitle:"今日全球重點",signalOne:"全球政策與市場訊號",signalTwo:"供應鏈與產業變化",signalThree:"台灣關聯與後續觀察",tagGlobal:"全球視角",tagMarket:"市場",tagIndustry:"產業",tagImpact:"影響鏈",tagTaiwan:"台灣",tagWatch:"追蹤",marketPanel:"市場雷達",visualNote:"更清楚的全球視野，從這裡開始。",featuresLabel:"每天，SharBo 幫你做什麼？",featuresTitle:"把大量資訊，整理成更好讀的情報視角。",exploreFeatures:"探索今天的情報",featureTopSub:"今日最重要的全球事件",featureTopBody:"快速掌握真正值得關注的重點。",featureEmergingSub:"正在形成、值得追蹤的新訊號",featureEmergingBody:"提早發現可能影響未來的重要動向。",featureImpactSub:"看懂事件如何彼此牽動",featureImpactBody:"理解事件之間的因果與影響鏈。",featureTaiwanSub:"從台灣角度理解全球變化",featureTaiwanBody:"分析事件對台灣可能造成的影響與風險。",featureMarketSub:"市場與產業脈動",featureMarketBody:"追蹤金融市場、產業與關鍵趨勢。",featureLangTitle:"三語閱讀",featureLangBody:"一份情報，三種語言，看見更大的世界。",differenceLabel:"不只是摘要，而是有結構的情報閱讀",differenceTitle:"我們整理的是訊號，而不只是文章。",differenceBody:"新聞很多，摘要也很多。SharBo Globo 想解決的不是「幫你把文章縮短」，而是：哪些值得看？哪些只是重複？哪些訊號正在形成？事件彼此有什麼關係？哪些事情可能影響台灣？",compareGeneric:"一般新聞整理",genericOne:"資訊很多但容易雜亂",genericTwo:"容易重複",genericThree:"難追蹤後續",genericFour:"事件關聯性不清楚",sharboOne:"先驗證再呈現",sharboTwo:"整理成可排序訊號",sharboThree:"保留可追蹤脈絡",sharboFour:"看懂影響鏈與台灣視角",sharboFive:"支援三語閱讀",workflowLabel:"SharBo 如何整理每日情報？",workflowTitle:"從蒐集到發布，每一步都有明確角色。",architectureLink:"查看技術架構詳情",stepCollect:"蒐集",stepNormalize:"整理與去重",stepVerify:"驗證",stepScore:"判斷重要性",stepLink:"找出事件關係",stepLocalize:"多語整理",stepValidate:"發布前檢查",stepPresent:"呈現",languageLabel:"一份情報，三種語言",languageTitle:"繁體中文、English、Tiếng Việt。",languageBody:"介面與內容維持同一套訊號結構，不需要在三份互不相干的報告之間來回切換。",gatewayProductLabel:"我只是想看蝦報",gatewayProductTitle:"進入 SharBo Globo",gatewayProductBody:"直接閱讀今天的全球情報。",gatewayProductCta:"看今天的蝦報",gatewayGithubLabel:"我想知道它怎麼做",gatewayGithubBody:"探索架構、文件、原始碼與公開契約。",gatewayDemoLabel:"先體驗公開架構",gatewayDemoBody:"使用合成資料體驗公開 UI 與 Explain Mode。",gatewayDemoCta:"開啟 Demo",storyLabel:"這個專案怎麼開始的？",storyTitle:"一開始，它只是我每天自己看的晨報。",storyBodyOne:"我每天會整理全球發生的重要事情，判斷哪些值得持續追蹤，以及它們和台灣、市場、產業之間可能有什麼關係。",storyBodyTwo:"前陣子在一次二次面試裡，面試官也和我分享了他的資訊整理方法，讓我重新思考這套流程。所以我決定把自己的做法整理成 SharBo Globo，也把其中可以公開的架構分享出來。",storyQuote:"把每天的資訊整理，變成一套可以持續改進的情報方法。",disclaimer:"免責聲明"
+  },
+  en: {
+    skip:"Skip to main content",brandSub:"Global Intelligence Radar",menuLabel:"Open navigation menu",navFeatures:"Features",navHow:"How it works",navStory:"About",navToday:"Read today's SharBo",heroBrand:"SharBo.",heroTitle:"Global Intelligence Radar",heroLead:"Find the signals that actually matter in global information noise.",heroBody:"Verify, rank and connect global events so you can understand what is happening faster — and how it may affect Taiwan.",ctaToday:"Read today's SharBo",ctaLearn:"Explore SharBo Globo",demoLink:"Interactive Demo",proofGlobal:"Global view",proofGlobalSub:"Focus on what matters",proofVerify:"Verifiable",proofVerifySub:"Not dependent on one source",proofConnect:"Connected",proofConnectSub:"See relationships between events",proofLang:"Three languages",previewToday:"Today",previewMarket:"Market Radar",previewImpact:"Taiwan Impact",previewDate:"Daily global intelligence",previewTitle:"Today's global focus",signalOne:"Global policy and market signals",signalTwo:"Supply-chain and industry shifts",signalThree:"Taiwan relevance and follow-up",tagGlobal:"Global",tagMarket:"Market",tagIndustry:"Industry",tagImpact:"Impact",tagTaiwan:"Taiwan",tagWatch:"Watch",marketPanel:"Market Radar",visualNote:"A clearer global view starts here.",featuresLabel:"What does SharBo do every day?",featuresTitle:"Turn information overload into a clearer intelligence view.",exploreFeatures:"Explore today's intelligence",featureTopSub:"The most important global events today",featureTopBody:"Quickly focus on what deserves your attention.",featureEmergingSub:"New signals worth tracking",featureEmergingBody:"Spot important movements before they fully develop.",featureImpactSub:"Understand how events connect",featureImpactBody:"Trace cause, effect and transmission paths.",featureTaiwanSub:"See global change from Taiwan's perspective",featureTaiwanBody:"Assess possible implications and risks for Taiwan.",featureMarketSub:"Market and industry movement",featureMarketBody:"Track markets, industries and key trends.",featureLangTitle:"Three-language reading",featureLangBody:"One intelligence set, three languages, a wider view.",differenceLabel:"More than summaries — structured intelligence reading",differenceTitle:"We organize signals, not just articles.",differenceBody:"There is already plenty of news and plenty of summaries. SharBo Globo focuses on different questions: What is worth watching? What is duplication? Which signals are emerging? How are events connected? What could matter to Taiwan?",compareGeneric:"Typical news organization",genericOne:"High volume, easy to lose focus",genericTwo:"Repeated information",genericThree:"Hard to follow over time",genericFour:"Weak event relationships",sharboOne:"Verify before presentation",sharboTwo:"Rankable signal structure",sharboThree:"Trackable context",sharboFour:"Impact chains and Taiwan perspective",sharboFive:"Three-language reading",workflowLabel:"How does SharBo organize daily intelligence?",workflowTitle:"Every step has a clear role, from collection to publishing.",architectureLink:"View technical architecture",stepCollect:"Collect",stepNormalize:"Normalize & dedupe",stepVerify:"Verify",stepScore:"Score importance",stepLink:"Link events",stepLocalize:"Localize",stepValidate:"Pre-publish validation",stepPresent:"Present",languageLabel:"One intelligence set, three languages",languageTitle:"Traditional Chinese, English, Tiếng Việt.",languageBody:"The interface and content share the same signal structure, instead of splitting into three unrelated reports.",gatewayProductLabel:"I just want to read SharBo",gatewayProductTitle:"Enter SharBo Globo",gatewayProductBody:"Read today's global intelligence directly.",gatewayProductCta:"Read today's SharBo",gatewayGithubLabel:"I want to see how it works",gatewayGithubBody:"Explore architecture, docs, source code and public contracts.",gatewayDemoLabel:"Try the public architecture first",gatewayDemoBody:"Use synthetic data to experience the public UI and Explain Mode.",gatewayDemoCta:"Open Demo",storyLabel:"How did this project start?",storyTitle:"At first, it was simply the morning briefing I made for myself.",storyBodyOne:"Every day I organize important global developments, decide what deserves continued attention, and look at how they may relate to Taiwan, markets and industries.",storyBodyTwo:"During a second-round interview, an interviewer shared his own information-organizing method with me. It made me rethink the workflow, so I turned my approach into SharBo Globo and began sharing the parts of the architecture that can be public.",storyQuote:"Turn daily information organization into an intelligence method that keeps improving.",disclaimer:"Disclaimer"
+  },
+  "vi-VN": {
+    skip:"Chuyển đến nội dung chính",brandSub:"Radar thông tin toàn cầu",menuLabel:"Mở menu điều hướng",navFeatures:"Tính năng",navHow:"Cách hoạt động",navStory:"Về SharBo",navToday:"Xem SharBo hôm nay",heroBrand:"SharBo.",heroTitle:"Radar thông tin toàn cầu",heroLead:"Tìm ra những tín hiệu thực sự đáng chú ý giữa nhiễu thông tin toàn cầu.",heroBody:"Xác minh, xếp hạng và kết nối các sự kiện toàn cầu để bạn hiểu nhanh hơn điều gì đang diễn ra — và nó có thể ảnh hưởng đến Đài Loan như thế nào.",ctaToday:"Xem SharBo hôm nay",ctaLearn:"Tìm hiểu SharBo Globo",demoLink:"Demo tương tác",proofGlobal:"Góc nhìn toàn cầu",proofGlobalSub:"Tập trung vào điều quan trọng",proofVerify:"Có thể kiểm chứng",proofVerifySub:"Không phụ thuộc một nguồn",proofConnect:"Có mạch liên kết",proofConnectSub:"Thấy quan hệ giữa các sự kiện",proofLang:"Đọc ba ngôn ngữ",previewToday:"Hôm nay",previewMarket:"Radar thị trường",previewImpact:"Ảnh hưởng đến Đài Loan",previewDate:"Thông tin toàn cầu hằng ngày",previewTitle:"Trọng điểm toàn cầu hôm nay",signalOne:"Tín hiệu chính sách và thị trường toàn cầu",signalTwo:"Biến động chuỗi cung ứng và ngành",signalThree:"Liên hệ với Đài Loan và điểm cần theo dõi",tagGlobal:"Toàn cầu",tagMarket:"Thị trường",tagIndustry:"Ngành",tagImpact:"Tác động",tagTaiwan:"Đài Loan",tagWatch:"Theo dõi",marketPanel:"Radar thị trường",visualNote:"Một góc nhìn toàn cầu rõ ràng hơn bắt đầu từ đây.",featuresLabel:"Mỗi ngày SharBo giúp bạn làm gì?",featuresTitle:"Biến lượng thông tin lớn thành góc nhìn tình báo dễ đọc hơn.",exploreFeatures:"Khám phá thông tin hôm nay",featureTopSub:"Những sự kiện toàn cầu quan trọng nhất hôm nay",featureTopBody:"Nhanh chóng nắm các điểm thực sự đáng chú ý.",featureEmergingSub:"Tín hiệu mới đang hình thành",featureEmergingBody:"Phát hiện sớm các chuyển động có thể ảnh hưởng tương lai.",featureImpactSub:"Hiểu cách các sự kiện tác động lẫn nhau",featureImpactBody:"Theo dõi quan hệ nguyên nhân, kết quả và chuỗi tác động.",featureTaiwanSub:"Hiểu biến động toàn cầu từ góc nhìn Đài Loan",featureTaiwanBody:"Phân tích khả năng ảnh hưởng và rủi ro đối với Đài Loan.",featureMarketSub:"Nhịp đập thị trường và ngành",featureMarketBody:"Theo dõi thị trường tài chính, ngành và các xu hướng chính.",featureLangTitle:"Đọc ba ngôn ngữ",featureLangBody:"Một bộ thông tin, ba ngôn ngữ, góc nhìn rộng hơn.",differenceLabel:"Không chỉ tóm tắt — mà là cách đọc thông tin có cấu trúc",differenceTitle:"Chúng tôi tổ chức tín hiệu, không chỉ tổ chức bài viết.",differenceBody:"Tin tức đã rất nhiều, bản tóm tắt cũng rất nhiều. SharBo Globo tập trung vào câu hỏi khác: Điều gì đáng xem? Điều gì chỉ lặp lại? Tín hiệu nào đang hình thành? Các sự kiện liên kết ra sao? Điều gì có thể ảnh hưởng đến Đài Loan?",compareGeneric:"Cách tổng hợp tin thông thường",genericOne:"Nhiều thông tin nhưng dễ rối",genericTwo:"Dễ trùng lặp",genericThree:"Khó theo dõi diễn biến",genericFour:"Quan hệ giữa sự kiện không rõ",sharboOne:"Xác minh trước khi hiển thị",sharboTwo:"Tổ chức thành tín hiệu có thể xếp hạng",sharboThree:"Giữ bối cảnh để tiếp tục theo dõi",sharboFour:"Chuỗi tác động và góc nhìn Đài Loan",sharboFive:"Hỗ trợ ba ngôn ngữ",workflowLabel:"SharBo tổ chức thông tin hằng ngày như thế nào?",workflowTitle:"Từ thu thập đến xuất bản, mỗi bước đều có vai trò rõ ràng.",architectureLink:"Xem kiến trúc kỹ thuật",stepCollect:"Thu thập",stepNormalize:"Chuẩn hóa & loại trùng",stepVerify:"Xác minh",stepScore:"Đánh giá mức độ quan trọng",stepLink:"Liên kết sự kiện",stepLocalize:"Bản địa hóa",stepValidate:"Kiểm tra trước khi xuất bản",stepPresent:"Trình bày",languageLabel:"Một bộ thông tin, ba ngôn ngữ",languageTitle:"繁體中文, English, Tiếng Việt.",languageBody:"Giao diện và nội dung dùng chung một cấu trúc tín hiệu, thay vì tách thành ba báo cáo không liên quan.",gatewayProductLabel:"Tôi chỉ muốn đọc SharBo",gatewayProductTitle:"Vào SharBo Globo",gatewayProductBody:"Đọc trực tiếp thông tin toàn cầu hôm nay.",gatewayProductCta:"Xem SharBo hôm nay",gatewayGithubLabel:"Tôi muốn biết hệ thống hoạt động ra sao",gatewayGithubBody:"Khám phá kiến trúc, tài liệu, mã nguồn và public contract.",gatewayDemoLabel:"Trải nghiệm kiến trúc công khai trước",gatewayDemoBody:"Dùng dữ liệu tổng hợp để trải nghiệm UI công khai và Explain Mode.",gatewayDemoCta:"Mở Demo",storyLabel:"Dự án này bắt đầu như thế nào?",storyTitle:"Ban đầu, đây chỉ là bản tin buổi sáng tôi tự làm cho mình.",storyBodyOne:"Mỗi ngày tôi tổng hợp những diễn biến toàn cầu quan trọng, đánh giá điều gì đáng tiếp tục theo dõi và xem chúng có thể liên quan đến Đài Loan, thị trường và các ngành như thế nào.",storyBodyTwo:"Trong một vòng phỏng vấn thứ hai, người phỏng vấn chia sẻ với tôi cách anh ấy tổ chức thông tin. Điều đó khiến tôi suy nghĩ lại về quy trình này, nên tôi phát triển cách làm của mình thành SharBo Globo và chia sẻ phần kiến trúc có thể công khai.",storyQuote:"Biến việc sắp xếp thông tin mỗi ngày thành một phương pháp tình báo có thể liên tục cải tiến.",disclaimer:"Tuyên bố miễn trừ trách nhiệm"
+  }
+};
+
+const currentLabels = {"zh-TW":"繁中",en:"EN","vi-VN":"VI"};
+const languageSwitcher = document.querySelector('.language-switcher');
+const langTrigger = document.querySelector('.lang-trigger');
+const navToggle = document.querySelector('.nav-toggle');
+const primaryNav = document.querySelector('.primary-nav');
+
+function setLanguage(lang){
+  const dictionary = translations[lang] || translations['zh-TW'];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach((el)=>{
+    const key = el.dataset.i18n;
+    if(dictionary[key]) el.textContent = dictionary[key];
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach((el)=>{
+    const key = el.dataset.i18nAria;
+    if(dictionary[key]) el.setAttribute('aria-label',dictionary[key]);
+  });
+  document.querySelector('[data-lang-current]').textContent = currentLabels[lang] || '繁中';
+  document.querySelectorAll('[data-lang]').forEach((button)=>button.classList.toggle('active',button.dataset.lang===lang));
+  try{localStorage.setItem('sharbo-official-language',lang);}catch(_err){}
+  languageSwitcher?.classList.remove('open');
+  langTrigger?.setAttribute('aria-expanded','false');
+}
+
+function initialLanguage(){
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get('lang');
+  if(requested && translations[requested]) return requested;
+  try{
+    const saved = localStorage.getItem('sharbo-official-language');
+    if(saved && translations[saved]) return saved;
+  }catch(_err){}
+  return 'zh-TW';
+}
+
+document.querySelectorAll('[data-lang]').forEach((button)=>{
+  button.addEventListener('click',()=>setLanguage(button.dataset.lang));
+});
+
+langTrigger?.addEventListener('click',()=>{
+  const isOpen = languageSwitcher.classList.toggle('open');
+  langTrigger.setAttribute('aria-expanded',String(isOpen));
+});
+
+document.addEventListener('click',(event)=>{
+  if(languageSwitcher && !languageSwitcher.contains(event.target)){
+    languageSwitcher.classList.remove('open');
+    langTrigger?.setAttribute('aria-expanded','false');
+  }
+});
+
+navToggle?.addEventListener('click',()=>{
+  const isOpen = primaryNav.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded',String(isOpen));
+});
+
+primaryNav?.querySelectorAll('a').forEach((link)=>link.addEventListener('click',()=>{
+  primaryNav.classList.remove('open');
+  navToggle?.setAttribute('aria-expanded','false');
+}));
+
+setLanguage(initialLanguage());
