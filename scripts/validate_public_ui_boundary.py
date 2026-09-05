@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Fail closed when public UI assets contain production-only identifiers.
 
-This is intentionally narrow and complements validate_public_repo.py. It protects the
-presentation layer added for the public preview from accidentally copying private
-repository, deployment, credential, or source-registry identifiers.
+The official landing page may link to one exact, user-facing Production App route.
+That exception is deliberately narrow: only the canonical public product URL is
+removed before scanning index.html. Other production hosts, API endpoints,
+private repository identifiers, credentials, and deployment details still fail.
 """
 from __future__ import annotations
 
@@ -14,10 +15,13 @@ PUBLIC_UI_FILES = (
     Path("index.html"),
     Path("demo.html"),
     Path("landing.css"),
+    Path("landing.js"),
     Path("public-v02.css"),
     Path("public-v02.js"),
     Path("README.md"),
 )
+
+OFFICIAL_PRODUCT_URL = "https://sharbo-globo-production.vercel.app/#/today"
 
 FORBIDDEN = {
     "private repository slug": re.compile(r"sharbo-globo-production", re.I),
@@ -29,13 +33,20 @@ FORBIDDEN = {
 }
 
 
+def text_for_boundary_scan(path: Path) -> str:
+    text = path.read_text(encoding="utf-8")
+    if path == Path("index.html"):
+        text = text.replace(OFFICIAL_PRODUCT_URL, "")
+    return text
+
+
 def main() -> int:
     failures: list[str] = []
     for path in PUBLIC_UI_FILES:
         if not path.exists():
             failures.append(f"missing required public UI file: {path}")
             continue
-        text = path.read_text(encoding="utf-8")
+        text = text_for_boundary_scan(path)
         for label, pattern in FORBIDDEN.items():
             if pattern.search(text):
                 failures.append(f"{path}: contains {label}")
