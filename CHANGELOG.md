@@ -4,6 +4,18 @@ All notable changes to this project will be documented here.
 
 ## [Unreleased]
 
+### Public architecture sync v0.3
+
+- Added a public-safe synchronization policy defining what may be promoted from product development, what requires sanitization, and what remains private-only.
+- Updated the public architecture from a single collector pipeline to independent news/event and structured-observation channels with explicit failure isolation.
+- Added the public `structured_signals` reader contract without production provider names, thresholds, watchlists, source allowlists or scoring weights.
+- Updated report semantics to support best-effort authoritative Top items (`1..5`) instead of requiring filler to reach exactly five.
+- Added `structured_only` mode: no news + at least one valid structured observation can publish; no news + no observations still fails closed.
+- Added validation for structured observation IDs, timestamps, three-language rendered text, source URLs, published counts and topic `structured_count` consistency.
+- Added regression tests for best-effort and structured-only report modes.
+- Documented idempotent structured-observation merge semantics so presentation rebuilds do not depend on collector schedule order.
+- Declared `sidphoto/sharbo-globo` the target canonical public upstream for reusable reader architecture; `sidphoto/shrimp-intelligence` is legacy compatibility only.
+
 ### Public Preview v0.2 redesign
 
 - Split the GitHub Pages root into a public flagship project landing and a dedicated interactive `demo.html` surface.
