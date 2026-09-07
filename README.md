@@ -103,14 +103,14 @@ The production system remains in a separate **private repository with independen
 
 Architecture updates are promoted through a sanitization/classification process rather than an automatic private→public mirror. See [Public-safe synchronization policy](docs/PUBLIC_SYNC_POLICY.md).
 
-## Public repository roles
+## Repository roles
 
 ```text
 sidphoto/sharbo-globo
   Canonical public project / contracts / reference UI
 
-sidphoto/sharbo-globo-production
-  Private production deployment and intelligence operation
+Private production repository
+  Deployment and intelligence operation
 
 sidphoto/shrimp-intelligence
   Legacy compatibility history — not the target upstream for new architecture
