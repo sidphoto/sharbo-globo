@@ -1,6 +1,6 @@
 # Public-safe synchronization policy
 
-`sidphoto/sharbo-globo` is the canonical public SharBo Globo repository. `sidphoto/sharbo-globo-production` is the private deployment repository. The old `sidphoto/shrimp-intelligence` repository is legacy and must not remain the long-term upstream for new reusable architecture.
+`sidphoto/sharbo-globo` is the canonical public SharBo Globo repository. The deployment and intelligence operation remains in a separate private repository. The old `sidphoto/shrimp-intelligence` repository is legacy and must not remain the long-term upstream for new reusable architecture.
 
 The goal is **architecture parity without intelligence leakage**.
 
@@ -71,7 +71,7 @@ The target state is:
 sidphoto/sharbo-globo
   └─ canonical public reader/contracts
           ↓ pinned immutable commit
-sidphoto/sharbo-globo-production
+Private production repository
   └─ vendored production reader + private patches/gates
 ```
 
