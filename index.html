@@ -3,28 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="SharBo Globo 蝦報。全球情報雷達官方網站：把全球資訊雜訊整理成可驗證、可排序、可追蹤的情報訊號。" />
-  <meta name="theme-color" content="#ffffff" />
-  <link rel="canonical" href="https://sidphoto.github.io/sharbo-globo/" />
 
-  <!-- Social preview. Without these, a shared link renders as a bare URL with no card,
-       which is exactly when a reader decides whether to click. -->
+  <!-- Social preview first. Crawlers may fetch only the first kilobyte of the document
+       (Facebook's returned HTTP 206 on a Range request), and og:image previously sat at
+       byte 1263 — six bytes past a 1024-byte read is the same as not having it at all. -->
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sidphoto.github.io/sharbo-globo/" />
+  <meta property="og:image" content="https://sidphoto.github.io/sharbo-globo/assets/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:title" content="SharBo Globo｜蝦報。全球情報雷達" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://sidphoto.github.io/sharbo-globo/assets/og-card.png" />
+  <meta property="og:description" content="從全球資訊雜訊中找出真正值得關注的訊號：新聞與官方觀測每日驗證、串連影響鏈，並以繁中／English／Tiếng Việt 呈現。" />
   <meta property="og:site_name" content="SharBo Globo" />
   <meta property="og:locale" content="zh_TW" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:locale:alternate" content="vi_VN" />
-  <meta property="og:url" content="https://sidphoto.github.io/sharbo-globo/" />
-  <meta property="og:title" content="SharBo Globo｜蝦報。全球情報雷達" />
-  <meta property="og:description" content="從全球資訊雜訊中找出真正值得關注的訊號：新聞與官方觀測每日驗證、串連影響鏈，並以繁中／English／Tiếng Việt 呈現。" />
-  <meta property="og:image" content="https://sidphoto.github.io/sharbo-globo/assets/og-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="SharBo Globo 蝦報。全球情報雷達" />
-  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="SharBo Globo｜蝦報。全球情報雷達" />
   <meta name="twitter:description" content="新聞 × 官方觀測，每日驗證的全球情報雷達。繁中／English／Tiếng Việt。" />
-  <meta name="twitter:image" content="https://sidphoto.github.io/sharbo-globo/assets/og-card.png" />
+  <link rel="canonical" href="https://sidphoto.github.io/sharbo-globo/" />
+  <meta name="description" content="SharBo Globo 蝦報。全球情報雷達官方網站：把全球資訊雜訊整理成可驗證、可排序、可追蹤的情報訊號。" />
+  <meta name="theme-color" content="#ffffff" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'" />
   <title>SharBo Globo｜蝦報。全球情報雷達</title>
   <link rel="stylesheet" href="./landing.css" />
