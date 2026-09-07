@@ -1,0 +1,14 @@
+# SharBo Globo — official site
+#
+# Open by default. Search and social preview crawlers are what carry the project to
+# readers, so nothing here gets in their way.
+#
+# The one exception is /data/: synthetic demo fixtures the interactive demo loads at
+# runtime. They carry no search value and only cost bandwidth when crawled in bulk.
+# This is a request, not a control — a crawler that ignores it is not stopped by a file.
+
+User-agent: *
+Allow: /
+Disallow: /data/
+
+Sitemap: https://sidphoto.github.io/sharbo-globo/sitemap.xml
