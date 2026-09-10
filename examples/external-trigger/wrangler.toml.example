@@ -1,0 +1,13 @@
+name = "sharbo-globo-public-trigger"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+# Example: 06:20 Asia/Taipei = 22:20 UTC on the previous calendar day.
+[triggers]
+crons = ["20 22 * * *"]
+
+[vars]
+GITHUB_OWNER = "your-github-user"
+GITHUB_REPO = "your-fork"
+GITHUB_WORKFLOW = "daily-demo.yml"
+GITHUB_REF = "main"
