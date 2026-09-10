@@ -1,14 +1,17 @@
 from __future__ import annotations
 
 import json
+import sys
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from scripts.build_daily_demo import rebase_report, update_index
 from scripts.validate_report import validate_report_payload
-
-ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_rebase_report_preserves_public_contract() -> None:
