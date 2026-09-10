@@ -1,0 +1,111 @@
+name: SharBo Globo — Public Daily Demo
+
+# Public reference automation only. It rebuilds synthetic demo data and never
+# reads production sources, production credentials, or private repositories.
+on:
+  schedule:
+    # GitHub cron is a best-effort backup scheduler. Use the optional external
+    # trigger example for tighter timing requirements.
+    - cron: "29 22 * * *"  # 06:29 Asia/Taipei
+    - cron: "53 22 * * *"  # 06:53 Asia/Taipei backup
+  workflow_dispatch:
+    inputs:
+      report_date:
+        description: "Optional Asia/Taipei report date (YYYY-MM-DD)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: sharbo-public-daily-demo
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TZ: Asia/Taipei
+      REPORT_DATE: ${{ inputs.report_date }}
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install public dependencies
+        run: pip install -r requirements.txt
+
+      - name: Resolve report date and idempotency guard
+        id: guard
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from datetime import datetime
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          target = os.getenv("REPORT_DATE") or datetime.now(ZoneInfo("Asia/Taipei")).date().isoformat()
+          latest = Path("data/latest.json")
+          current = None
+          if latest.exists():
+              try:
+                  payload = json.loads(latest.read_text(encoding="utf-8"))
+                  if payload.get("demo") is True:
+                      current = payload.get("date")
+              except Exception:
+                  pass
+          print(f"report_date={target}")
+          print(f"should_run={'false' if current == target else 'true'}")
+          PY
+
+      - name: Build today's synthetic demo report
+        if: steps.guard.outputs.should_run == 'true'
+        run: python scripts/build_daily_demo.py --date "${{ steps.guard.outputs.report_date }}"
+
+      - name: Validate exact public artifact
+        if: steps.guard.outputs.should_run == 'true'
+        run: |
+          python scripts/validate_report.py data/latest.json
+          python scripts/validate_i18n.py
+          python scripts/validate_public_repo.py
+          python scripts/validate_public_ui_boundary.py
+
+      - name: Commit only synthetic public data
+        if: steps.guard.outputs.should_run == 'true' && github.ref == 'refs/heads/main'
+        run: |
+          REPORT_DATE="${{ steps.guard.outputs.report_date }}"
+          git config user.name "SharBo Globo Public Demo Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -- "data/latest.json" "data/${REPORT_DATE}.json" "data/index.json"
+          if git diff --cached --quiet; then
+            echo "No public demo changes."
+            exit 0
+          fi
+          git commit -m "data: refresh synthetic public demo ${REPORT_DATE}"
+          git pull --rebase --autostash origin main
+          git push origin main
+
+      - name: Alert on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          day=$(TZ=Asia/Taipei date +%F)
+          title="public daily demo failed: ${day}"
+          body="Synthetic public demo automation failed: ${RUN_URL}\n\nThe last-known-good GitHub Pages deployment remains unchanged."
+          existing=$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty' || true)
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "Re-failed. ${RUN_URL}"
+          else
+            gh issue create --title "$title" --body "$body" || true
+          fi
